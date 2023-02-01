@@ -6,7 +6,7 @@
 ❌❕❌❕⭕ <br/>
 
 ### OBJECTIVE:
-This is an introduction project to Android Mobile programming, made in Java instead of Kotlin due to Exam Requirements.
+This is an introduction project to Android Mobile programming, made in Java instead of Kotlin due to Uni Exam Requirements.
 <br/>
 In order to understand what Tic Tac Toe game is and how to play the game, below is the description.
 
