@@ -79,8 +79,14 @@ public class MainActivity extends AppCompatActivity {
                 flag = 1;
                 // Someone Won
                 if (gameState[winPosition[0]] == 0) {
+                    TextView p1 = findViewById(R.id.player1);
+                    int score1 = Integer.parseInt(p1.getText().toString());
+                    p1.setText(String.valueOf(++score1));
                     Toast.makeText(this, "X has Won!", Toast.LENGTH_LONG).show();
                 } else {
+                    TextView p2 = findViewById(R.id.player2);
+                    int score2 = Integer.parseInt(p2.getText().toString());
+                    p2.setText(String.valueOf(++score2));
                     Toast.makeText(this, "O has Won!", Toast.LENGTH_LONG).show();
                 }
                 reset();
@@ -91,5 +97,13 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "It's a Draw!", Toast.LENGTH_LONG).show();
             reset();
         }
+    }
+
+    public void resetGame(View v){
+        TextView p1 = findViewById(R.id.player1);
+        p1.setText("0");
+        TextView p2 = findViewById(R.id.player2);
+        p2.setText("0");
+        reset();
     }
 }

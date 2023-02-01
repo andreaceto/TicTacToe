@@ -193,6 +193,6 @@
         android:layout_marginTop="30dp"
         android:text="RESET"
         android:textSize="20dp"
-        android:onClick="reset"
+        android:onClick="resetGame"
         />
 </RelativeLayout>
