@@ -12,6 +12,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/p1name"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="Player 1:"
@@ -21,6 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/p2name"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="Player 2:"
@@ -37,7 +39,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/player1"
+            android:id="@+id/p1score"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="0"
@@ -46,7 +48,7 @@
             />
 
         <TextView
-            android:id="@+id/player2"
+            android:id="@+id/p2score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
