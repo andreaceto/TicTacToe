@@ -12,6 +12,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/p1name"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="Player 1:"
@@ -21,6 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/p2name"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="Player 2:"
@@ -37,7 +39,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/player1"
+            android:id="@+id/p1score"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="0"
@@ -46,7 +48,7 @@
             />
 
         <TextView
-            android:id="@+id/player2"
+            android:id="@+id/p2score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -64,7 +66,7 @@
         android:textSize="30dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/scoreBoard"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         />
     <GridLayout
         android:layout_width="match_parent"
@@ -73,7 +75,7 @@
         android:rowCount="3"
         android:columnCount="3"
         android:layout_below="@+id/txtView"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="15dp">
 
         <Button
             android:id="@+id/btn1"
@@ -184,15 +186,37 @@
             android:onClick="moveInput"
             />
     </GridLayout>
-    <Button
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnReset"
+        android:id="@+id/resetLayout"
         android:layout_below="@id/grid"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="RESET"
-        android:textSize="20dp"
-        android:onClick="resetGame"
-        />
+        android:layout_marginTop="10dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnReset"
+            android:layout_centerHorizontal="true"
+            android:text="RESET"
+            android:textSize="20dp"
+            android:onClick="resetGame"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settingsLayout"
+        android:layout_below="@id/resetLayout"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="5dp">
+        <ImageButton
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/round_shape"
+            android:src="@drawable/ic_settings"
+            android:onClick="launchSettings"
+            />
+    </RelativeLayout>
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final int SETTINGS_ACTIVITY_REQUEST_CODE = 0;
 
     // Player representation
     // 0 - X
@@ -32,6 +35,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Check that it is the SecondActivity with an OK result
+        if (requestCode == SETTINGS_ACTIVITY_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+
+                // Get String data from Intent
+                ArrayList<String> playerNames = data.getStringArrayListExtra("playerNames");
+                String p1name = playerNames.get(0);
+                String p2name = playerNames.get(1);
+                // Set text views with string
+                TextView p1txtView = findViewById(R.id.p1name);
+                p1txtView.setText(p1name);
+                TextView p2txtView = findViewById(R.id.p2name);
+                p2txtView.setText(p2name);
+            }
+        }
     }
 
     public void moveInput(View v){
@@ -79,12 +103,12 @@ public class MainActivity extends AppCompatActivity {
                 flag = 1;
                 // Someone Won
                 if (gameState[winPosition[0]] == 0) {
-                    TextView p1 = findViewById(R.id.player1);
+                    TextView p1 = findViewById(R.id.p1score);
                     int score1 = Integer.parseInt(p1.getText().toString());
                     p1.setText(String.valueOf(++score1));
                     Toast.makeText(this, "X has Won!", Toast.LENGTH_LONG).show();
                 } else {
-                    TextView p2 = findViewById(R.id.player2);
+                    TextView p2 = findViewById(R.id.p2score);
                     int score2 = Integer.parseInt(p2.getText().toString());
                     p2.setText(String.valueOf(++score2));
                     Toast.makeText(this, "O has Won!", Toast.LENGTH_LONG).show();
@@ -100,10 +124,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void resetGame(View v){
-        TextView p1 = findViewById(R.id.player1);
+        TextView p1 = findViewById(R.id.p1score);
         p1.setText("0");
-        TextView p2 = findViewById(R.id.player2);
+        TextView p2 = findViewById(R.id.p2score);
         p2.setText("0");
         reset();
+    }
+
+    public void launchSettings(View v){
+        Intent i = new Intent(this, SettingsActivity.class);
+        startActivityForResult(i, SETTINGS_ACTIVITY_REQUEST_CODE);
     }
 }
