@@ -11,11 +11,13 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:id="@+id/themeSwitchBtn"
-            android:text="Dark Theme"/>
+            android:text="Dark Theme"
+            android:onClick="switchTheme"/>
         <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:id="@+id/editPlayersBtn"
-            android:text="Edit Players"/>
+            android:text="Edit Players"
+            android:onClick="editPlayers"/>
     </LinearLayout>
 </RelativeLayout>
