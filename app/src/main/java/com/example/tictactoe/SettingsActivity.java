@@ -25,6 +25,10 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            Button b = findViewById(R.id.themeSwitchBtn);
+            b.setText("Light Theme");
+        }
     }
 
     public void switchTheme(View v){
