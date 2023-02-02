@@ -212,10 +212,11 @@
         <ImageButton
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:id="@+id/settingsBtn"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="5dp"
-            android:background="@drawable/round_shape"
-            android:src="@drawable/ic_settings"
+            android:background="@drawable/round_shape_light"
+            android:src="@drawable/ic_settings_light"
             android:onClick="launchSettings"
             />
     </RelativeLayout>
