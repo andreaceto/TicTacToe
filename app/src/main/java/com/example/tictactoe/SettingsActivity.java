@@ -32,10 +32,28 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void editPlayers(View v){
+
         createEditPlayersDialog();
+
+        dialog.show();
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+            }
+        });
     }
 
     public void createEditPlayersDialog(){
+
         dialogBuilder = new AlertDialog.Builder(this);
         final View editPlayersPopUp = getLayoutInflater().inflate(R.layout.edit_players_popup,null);
 
@@ -47,6 +65,6 @@ public class SettingsActivity extends AppCompatActivity {
 
         dialogBuilder.setView(editPlayersPopUp);
         dialog = dialogBuilder.create();
-        dialog.show();
+
     }
 }
